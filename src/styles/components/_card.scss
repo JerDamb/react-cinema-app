@@ -33,10 +33,18 @@
     box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
       0 16px 1px rgba(255, 255, 255, 0.05);
   }
+
+  .separation {
+    position: absolute;
+    background: white;
+    height: 20px;
+    width: 100%;
+    border-radius: 40px 40px 0 0;
+    z-index: 40;
+    transform: translateY(-90%);
+  }
   h2 {
-    margin: 14px 0 0px;
     letter-spacing: 1px;
-    // line-height: 20px;
     font-size: 1.5rem;
     font-family: "Montserrat";
     color: $black;

@@ -17,22 +17,22 @@ const Card = ({ movie }) => {
           genreArray.push(`Aventure`);
           break;
         case 16:
-          genreArray.push(`Animation`);
+          genreArray.push(`Anim.`);
           break;
         case 35:
-          genreArray.push(`Comédie`);
+          genreArray.push(`Com;`);
           break;
         case 80:
           genreArray.push(`Policier`);
           break;
         case 99:
-          genreArray.push(`Documentaire`);
+          genreArray.push(`Docu.`);
           break;
         case 18:
           genreArray.push(`Drame`);
           break;
         case 10751:
-          genreArray.push(`Famille`);
+          genreArray.push(`Fam.`);
           break;
         case 14:
           genreArray.push(`Fantasy`);
@@ -84,6 +84,7 @@ const Card = ({ movie }) => {
         }
         alt=""
       />
+      <div className="separation"></div>
       <h2>{movie.title}</h2>
       {movie.release_date ? (
         <h5>Sortie le : {dateFormater(movie.release_date)}</h5>
