@@ -1,9 +1,11 @@
 .header {
   h1 {
-    font-size: 3.3rem;
-    text-shadow: 2px 3px 0px $color-1;
+    font-family: "Montserrat";
+    font-size: 2.3rem;
     text-align: center;
     letter-spacing: 2px;
+    margin: 15px;
+    color: $black;
   }
   nav {
     position: absolute;
@@ -16,22 +18,31 @@
 
       a {
         text-decoration: none;
-        color: $white;
+        width: 120px;
+        height: 40px;
+        color: $black;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+          rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 10px;
-        width: 102px;
         text-align: center;
         margin-right: 5px;
 
         &:visited {
-          text-decoration: none;
-          color: $white;
+          // text-decoration: none;
+          // color: $white;
+          background: #293067;
         }
         &:hover {
-          background: $black;
+          background: #293067;
+          color: white;
         }
       }
       a.nav-active {
-        background: $color-1;
+        background: #293067;
+        color: white;
 
         &:hover {
           background: $black;

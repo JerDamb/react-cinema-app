@@ -53,7 +53,7 @@ const Card = ({ movie }) => {
           genreArray.push(`Romance`);
           break;
         case 878:
-          genreArray.push(`Science-fiction`);
+          genreArray.push(`SF`);
           break;
         case 10770:
           genreArray.push(`Téléfilm`);
@@ -90,13 +90,15 @@ const Card = ({ movie }) => {
       ) : (
         ""
       )}
-      <h4>{movie.vote_average}/10</h4>
+      <div className="noteGender">
+        <h4>{movie.vote_average}/10</h4>
 
-      <ul>{genderFinder()}</ul>
+        <ul>{genderFinder()}</ul>
+      </div>
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 
-      <div className="btn">Ajouter aux coups de coeur</div>
+      <div className="btn">Ajout coups de coeur</div>
     </div>
   );
 };

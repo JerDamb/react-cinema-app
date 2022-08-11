@@ -1,21 +1,20 @@
 .card {
   flex: 1 0 25%;
-  min-width: 260px;
-  max-width: 280px;
-  height: 620px;
-  background: #060d2c;
-  border-radius: 35px;
-  margin: 5px;
-  padding: 26px 15px 30px;
+  min-width: 320px;
+  max-width: 320px;
+  height: 800px;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+  margin: 30px 10px;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 
   &::after {
     content: "";
     position: absolute;
     height: 90px;
     width: 100%;
-    background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, $black 55%);
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
@@ -23,78 +22,108 @@
   }
 
   img {
-    width: 80%;
-    height: 254px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 450px;
+    justify-self: end;
     object-fit: cover;
     object-position: top;
     display: block;
     margin: 0 auto;
-    border-radius: 50px;
     box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
       0 16px 1px rgba(255, 255, 255, 0.05);
   }
   h2 {
-    margin: 24px 0 0px;
+    margin: 14px 0 0px;
     letter-spacing: 1px;
-    line-height: 20px;
+    // line-height: 20px;
+    font-size: 1.5rem;
+    font-family: "Montserrat";
+    color: $black;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   h5 {
-    color: $color-3;
+    color: #060d2c;
     letter-spacing: 1px;
     font-size: 1.2rem;
     font-weight: 300;
+    padding-left: 15px;
   }
-  h4 {
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-    margin-top: -4px;
-
-    span {
-      font-size: 0.7rem;
-    }
-  }
-  ul {
-    margin: 6px 0;
+  .noteGender {
     display: flex;
-    flex-wrap: wrap;
-  }
-  li {
-    background: #212040;
-    border-radius: 18px;
-    padding: 0px 7px;
-    margin: 0 4px 4px 0;
-    font-size: 1.1rem;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
 
-    &:first-child {
-      margin-left: -4px;
+    h4 {
+      letter-spacing: 1px;
+      font-size: 1.2rem;
+      margin-top: -5px;
+      color: $black;
+
+      span {
+        font-size: 0.7rem;
+      }
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      background: #293067;
+      transform: translateY(-10px);
+      border-radius: 8px;
+      padding: 0px 5px;
+      margin: 5px 0 0 5px;
+      font-size: 1.1rem;
+
+      &:first-child {
+        margin-left: -4px;
+      }
     }
   }
   h3 {
+    margin-top: -10px;
     letter-spacing: 1px;
     font-size: 1.4rem;
-    margin-top: 10px;
+    padding-left: 15px;
+    color: $black;
   }
+
   p {
     color: $color-3;
     font-size: 1.3rem;
     line-height: 20px;
     height: 160px;
     overflow-y: scroll;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    cursor: n-resize;
 
     &::-webkit-scrollbar {
       display: none;
     }
   }
   .btn {
-    background: #546fe4;
+    // background: #546fe4;
+    font-family: "Montserrat";
+    height: 50px;
+    font-size: 1.1rem;
+    background: #293067;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    color: $white;
     position: absolute;
-    bottom: 16px;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 14px 0;
-    width: 150px;
-    text-align: center;
-    border-radius: 15px;
+    transform: translateX(-50%) translateY(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
     z-index: 50;
@@ -103,10 +132,10 @@
     &:hover {
       background: #212040;
       box-shadow: 0 0 10px #546ee4d2;
-      font-size: 1.025rem;
     }
     &:active {
-      transform: scale(1.05) translateX(-50%);
+      transform: scale(1.01) translateX(-50%) translateY(50%);
+      // transform: scale(1.05);
     }
   }
 }
