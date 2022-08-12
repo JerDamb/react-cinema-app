@@ -20,7 +20,7 @@ const Card = ({ movie }) => {
           genreArray.push(`Anim.`);
           break;
         case 35:
-          genreArray.push(`Com;`);
+          genreArray.push(`Com.`);
           break;
         case 80:
           genreArray.push(`Policier`);
@@ -74,6 +74,25 @@ const Card = ({ movie }) => {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
+  const addStorage = () => {
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+
+    if (!storedData.includes(movie.id.toString())) {
+      storedData.push(movie.id);
+      window.localStorage.movies = storedData;
+    }
+  };
+
+  const deleteStorage = () => {
+    let storedData = window.localStorage.movies.split(",");
+
+    let newData = storedData.filter((id) => id != movie.id);
+
+    window.localStorage.movies = newData;
+  };
+
   return (
     <div className="card">
       <img
@@ -94,12 +113,32 @@ const Card = ({ movie }) => {
       <div className="noteGender">
         <h4>{movie.vote_average}/10</h4>
 
-        <ul>{genderFinder()}</ul>
+        <ul>
+          {movie.genre_ids
+            ? genderFinder()
+            : movie.genres.map((genre, index) => (
+                <li key={index}>{genre.name}</li>
+              ))}
+        </ul>
       </div>
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 
-      <div className="btn">Ajout coups de coeur</div>
+      {movie.genre_ids ? (
+        <div className="btn" onClick={() => addStorage()}>
+          Ajouter aux coups de coeur
+        </div>
+      ) : (
+        <div
+          className="btn"
+          onClick={() => {
+            deleteStorage();
+            window.location.reload();
+          }}
+        >
+          Supprimer de la liste
+        </div>
+      )}
     </div>
   );
 };
